@@ -1,5 +1,8 @@
 package com.product.Services;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +17,19 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public Integer addProduct(Product product) {
-		// TODO Auto-generated method stub
 		Product addProduct = iProductRepository.save(product);
 		return addProduct.getProductId();		
 	}
+
+	@Override
+	public List<Product> getAllProducts() {
+		return iProductRepository.findAll();
+	}
+
+	@Override
+	public Optional<Product> getproductById(Integer pId) {
+		return iProductRepository.findById(pId);
+	}
+
 
 }
