@@ -12,5 +12,11 @@ public interface ProductService {
 	List<Product> getAllProducts();
 	
 	Optional<Product> getproductById(Integer pId);
+	
+	Product updateProduct(Product product, Integer pId);
+	
+	void deleteProduct(Integer pId);
+	
+	void deleteAllProduct();
 
 }
