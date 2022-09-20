@@ -21,7 +21,7 @@ public class SchoolServiceController {
 	@GetMapping(value = "/{schoolname}")
 	public String getStudents(@PathVariable("schoolname") String schoolname) {
 		System.out.println("Getting the schoolname"+schoolname);
-		String schoolurl = "http://localhost:8091/getStudentDetailsForSchool/"+schoolname;
+		String schoolurl = "http://student-service/getStudentDetailsForSchool/"+schoolname;
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<String> httpEntity = new HttpEntity<String>(headers);
 		ResponseEntity<String> response = restTemplate.exchange(schoolurl,HttpMethod.GET ,httpEntity,String.class);
