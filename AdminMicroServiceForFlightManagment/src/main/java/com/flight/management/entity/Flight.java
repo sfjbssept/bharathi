@@ -4,14 +4,24 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
+@Entity
 public class Flight {
 	
-	 public enum mealsType
+	 private enum mealsType
      {
-         veg,
-         nonveg
+         VEG,
+         NONVEG
      }
 	
+	@Id
 	private Integer flightId;
 	
 	private String flightNumber;
@@ -19,22 +29,28 @@ public class Flight {
 	private String flightFromPlace;
 	
 	private String flightToPlace;
-	
+
+	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime flightStartDateTime;
 	
+	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime flightEndDateTime;
 	
-	private String noOfBusinessClassSeats;
+	private Integer noOfBusinessClassSeats;
 	
-	private String noOfNonBusinessClassSeats;
+	private Integer noOfNonBusinessClassSeats;
 	
-	private String ticketCost;
+	private Integer ticketCost;
 	
 	private Integer noOfRows;
 	
-	private mealsType meals;
+	private mealsType meals;		
 	
-	private Airline airline;
+	private Integer airlineId;
+	
+	private String instrumentName;
 
 	public Integer getFlightId() {
 		return flightId;
@@ -84,27 +100,27 @@ public class Flight {
 		this.flightEndDateTime = flightEndDateTime;
 	}
 
-	public String getNoOfBusinessClassSeats() {
+	public Integer getNoOfBusinessClassSeats() {
 		return noOfBusinessClassSeats;
 	}
 
-	public void setNoOfBusinessClassSeats(String noOfBusinessClassSeats) {
+	public void setNoOfBusinessClassSeats(Integer noOfBusinessClassSeats) {
 		this.noOfBusinessClassSeats = noOfBusinessClassSeats;
 	}
 
-	public String getNoOfNonBusinessClassSeats() {
+	public Integer getNoOfNonBusinessClassSeats() {
 		return noOfNonBusinessClassSeats;
 	}
 
-	public void setNoOfNonBusinessClassSeats(String noOfNonBusinessClassSeats) {
+	public void setNoOfNonBusinessClassSeats(Integer noOfNonBusinessClassSeats) {
 		this.noOfNonBusinessClassSeats = noOfNonBusinessClassSeats;
 	}
 
-	public String getTicketCost() {
+	public Integer getTicketCost() {
 		return ticketCost;
 	}
 
-	public void setTicketCost(String ticketCost) {
+	public void setTicketCost(Integer ticketCost) {
 		this.ticketCost = ticketCost;
 	}
 
@@ -124,12 +140,20 @@ public class Flight {
 		this.meals = meals;
 	}
 
-	public Airline getAirline() {
-		return airline;
+	public Integer getAirlineId() {
+		return airlineId;
 	}
 
-	public void setAirline(Airline airline) {
-		this.airline = airline;
+	public void setAirlineId(Integer airlineId) {
+		this.airlineId = airlineId;
+	}
+
+	public String getInstrumentName() {
+		return instrumentName;
+	}
+
+	public void setInstrumentName(String instrumentName) {
+		this.instrumentName = instrumentName;
 	}
 
 	@Override
@@ -138,12 +162,14 @@ public class Flight {
 				+ flightFromPlace + ", flightToPlace=" + flightToPlace + ", flightStartDateTime=" + flightStartDateTime
 				+ ", flightEndDateTime=" + flightEndDateTime + ", noOfBusinessClassSeats=" + noOfBusinessClassSeats
 				+ ", noOfNonBusinessClassSeats=" + noOfNonBusinessClassSeats + ", ticketCost=" + ticketCost
-				+ ", noOfRows=" + noOfRows + ", meals=" + meals + ", airline=" + airline + "]";
+				+ ", noOfRows=" + noOfRows + ", meals=" + meals + ", airlineId=" + airlineId + ", instrumentName="
+				+ instrumentName + "]";
 	}
 
 	public Flight(Integer flightId, String flightNumber, String flightFromPlace, String flightToPlace,
-			LocalDateTime flightStartDateTime, LocalDateTime flightEndDateTime, String noOfBusinessClassSeats,
-			String noOfNonBusinessClassSeats, String ticketCost, Integer noOfRows, mealsType meals, Airline airline) {
+			LocalDateTime flightStartDateTime, LocalDateTime flightEndDateTime, Integer noOfBusinessClassSeats,
+			Integer noOfNonBusinessClassSeats, Integer ticketCost, Integer noOfRows, mealsType meals, Integer airlineId,
+			String instrumentName) {
 		super();
 		this.flightId = flightId;
 		this.flightNumber = flightNumber;
@@ -156,38 +182,15 @@ public class Flight {
 		this.ticketCost = ticketCost;
 		this.noOfRows = noOfRows;
 		this.meals = meals;
-		this.airline = airline;
+		this.airlineId = airlineId;
+		this.instrumentName = instrumentName;
 	}
 
 	public Flight() {
-	
+
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(airline, flightEndDateTime, flightFromPlace, flightId, flightNumber, flightStartDateTime,
-				flightToPlace, meals, noOfBusinessClassSeats, noOfNonBusinessClassSeats, noOfRows, ticketCost);
-	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Flight other = (Flight) obj;
-		return Objects.equals(airline, other.airline) && Objects.equals(flightEndDateTime, other.flightEndDateTime)
-				&& Objects.equals(flightFromPlace, other.flightFromPlace) && Objects.equals(flightId, other.flightId)
-				&& Objects.equals(flightNumber, other.flightNumber)
-				&& Objects.equals(flightStartDateTime, other.flightStartDateTime)
-				&& Objects.equals(flightToPlace, other.flightToPlace) && meals == other.meals
-				&& Objects.equals(noOfBusinessClassSeats, other.noOfBusinessClassSeats)
-				&& Objects.equals(noOfNonBusinessClassSeats, other.noOfNonBusinessClassSeats)
-				&& Objects.equals(noOfRows, other.noOfRows) && Objects.equals(ticketCost, other.ticketCost);
-	}
 
 	
-
 }

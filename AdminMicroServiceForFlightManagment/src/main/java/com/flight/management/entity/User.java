@@ -1,23 +1,15 @@
 package com.flight.management.entity;
 
-import java.util.Objects;
-
 public class User {
 	
-	private String userName;
-	private String userRole;
+	private String username;
 	private String password;
-	public String getUserName() {
-		return userName;
+	
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getUserRole() {
-		return userRole;
-	}
-	public void setUserRole(String userRole) {
-		this.userRole = userRole;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -27,32 +19,17 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [userName=" + userName + ", userRole=" + userRole + ", password=" + password + "]";
+		return "User [username=" + username + ", password=" + password + "]";
 	}
-	public User(String userName, String userRole, String password) {
+	public User(String username, String password) {
 		super();
-		this.userName = userName;
-		this.userRole = userRole;
+		this.username = username;
 		this.password = password;
 	}
 	public User() {
+
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(password, userName, userRole);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		return Objects.equals(password, other.password) && Objects.equals(userName, other.userName)
-				&& Objects.equals(userRole, other.userRole);
-	}
+	
 	
 	
 	

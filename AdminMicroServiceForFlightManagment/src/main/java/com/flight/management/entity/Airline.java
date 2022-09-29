@@ -2,12 +2,17 @@ package com.flight.management.entity;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Airline {
 	
-	public enum scheduledDays {
+	private enum scheduledDays {
 		MONDAY, WEDNESDAY, FRIDAY
 	}
 
+	@Id
 	private Integer airlineId;
 
 	private String airlineName;
