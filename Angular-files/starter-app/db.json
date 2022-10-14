@@ -1,0 +1,50 @@
+{
+  "students": [
+    {
+      "firstname": "Bharathi",
+      "lastname": "Reddy",
+      "class": 12,
+      "age": 15,
+      "id": 1
+    },
+    {
+      "firstname": "Ajay",
+      "lastname": "Nayak",
+      "age": 19,
+      "class": 12,
+      "subject": "PCMB",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "firstname": "Ajay",
+      "lastname": "Nayak",
+      "age": 19,
+      "class": 12,
+      "subject": "PCMB",
+      "gender": "Male",
+      "id": 3
+    },
+    {
+      "airlineId": "1",
+      "airlineName": "A1022",
+      "airlineSchedule": "Monday",
+      "airlineStatus": "true",
+      "id": 4
+    },
+    {
+      "airlineId": "",
+      "airlineName": "",
+      "airlineSchedule": "",
+      "airlineStatus": "",
+      "id": 5
+    },
+    {
+      "airlineId": "",
+      "airlineName": "",
+      "airlineSchedule": "",
+      "airlineStatus": "",
+      "id": 6
+    }
+  ]
+}

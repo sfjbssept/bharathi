@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "starter-app": {
+    "FlightManagementApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/starter-app",
+            "outputPath": "dist/flight-management-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "starter-app:build:production"
+              "browserTarget": "FlightManagementApp:build:production"
             },
             "development": {
-              "browserTarget": "starter-app:build:development"
+              "browserTarget": "FlightManagementApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "starter-app:build"
+            "browserTarget": "FlightManagementApp:build"
           }
         },
         "test": {
@@ -91,7 +91,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -100,6 +100,6 @@
     }
   },
   "cli": {
-    "analytics": "77a105b7-6c9f-4c37-b56b-b4c6f916355f"
+    "analytics": "0f8c167d-583e-4ae0-82b7-b24fe9c5abd3"
   }
 }

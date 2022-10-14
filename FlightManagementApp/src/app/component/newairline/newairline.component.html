@@ -1,0 +1,38 @@
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Airline ID</label>
+      <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="airline.airlineId" class="form-control" id="validationCustom01" placeholder="Please Enter Airline ID" required>
+      <div class="valid-feedback">
+          Looks good!
+      </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom03" class="form-label">Airline Name</label>
+    <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="airline.airlineName"  placeholder="Please Enter Airline Name" type="text" class="form-control" id="validationCustom03" required>
+    <div class="invalid-feedback">
+        Please provide your Airline Name
+    </div>
+</div>
+
+  <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Airline Schedule</label>
+      <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="airline.airlineSchedule"  placeholder="Monday,Wednesday,Friday" type="text" class="form-control" id="validationCustom03" required>
+      <div class="invalid-feedback">
+          Please provide your Airline Schedule
+      </div>
+  </div>
+
+  <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Airline Status</label>
+      <input [ngModelOptions]="{standalone: true}" [(ngModel)]="airline.airlineStatus"  type="text" class="form-control" id="validationCustom05" required>
+      <div class="invalid-feedback">
+          Enter Airline Status
+      </div>
+  </div>
+  
+      <div style="text-align: center;" class="col-12">
+          <button (click)="save()" class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+  
+  
+</form>

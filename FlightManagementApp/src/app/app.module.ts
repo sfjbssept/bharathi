@@ -4,29 +4,27 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { UserformComponent } from './component/userform/userform.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/home/home.component';
-import { ContactComponent } from './component/contact/contact.component';
-import { AboutComponent } from './component/about/about.component';
-import { RegisteredstudentComponent } from './component/registeredstudent/registeredstudent.component';
+import { NewairlineComponent } from './component/newairline/newairline.component';
+import { LoginComponent } from './component/login/login.component';
+import { AddinventoryComponent } from './component/addinventory/addinventory.component';
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserformComponent,
-    NavbarComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    RegisteredstudentComponent
+    NewairlineComponent,
+    LoginComponent,
+    AddinventoryComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
