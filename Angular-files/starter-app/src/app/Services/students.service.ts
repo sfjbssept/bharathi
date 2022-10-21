@@ -1,18 +1,16 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Student } from 'src/app/Entity/Student';
-const BASE_URL = "http://localhost:5000/students/"
+import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
+const BASE_URL = 'http://localhost:5000/students/';
+
+
 export class StudentsService {
 
   createStudent(student: {
     firstname: String;
     lastname: String;
-    age: Number;
-    class: Number;
+    age: number;
+    class: number;
     subject: String;
     gender: String;
   }) {
