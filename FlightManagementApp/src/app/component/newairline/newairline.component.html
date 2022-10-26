@@ -1,11 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.javaguides.net" class="navbar-brand">Flight Management System</a></div>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <!-- <li>
+            <a *ngIf="!isLoggedIn" class="nav-link" href="/login">Login</a>
+        </li> -->
+        <li>
+            <a class="nav-link" href="/registerAirline">Create Airline</a>
+        </li>
+        <li>
+            <a class="nav-link" href="/addinventory">Add Inventory</a>
+        </li>
+        <li>
+            <a class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+        </li>
+    </ul>
+</nav>
 <form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
+ <!--<div class="col-md-4">
       <label for="validationCustom01" class="form-label">Airline ID</label>
       <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="airline.airlineId" class="form-control" id="validationCustom01" placeholder="Please Enter Airline ID" required>
       <div class="valid-feedback">
           Looks good!
       </div>
-  </div>
+  </div> -->
   <div class="col-md-6">
     <label for="validationCustom03" class="form-label">Airline Name</label>
     <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="airline.airlineName"  placeholder="Please Enter Airline Name" type="text" class="form-control" id="validationCustom03" required>
@@ -21,6 +38,15 @@
           Please provide your Airline Schedule
       </div>
   </div>
+
+ <!--<div class="col-md-6">
+        <select [(ngModel)]="airline.airlineSchedule">
+            <option default>Select the Schedule</option>
+            <option>MONDAY</option>
+            <option>WEDNESDAY</option>
+            <option>FRIDAY</option>
+        </select>
+    </div> -->
 
   <div class="col-md-3">
       <label for="validationCustom05" class="form-label">Airline Status</label>

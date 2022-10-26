@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import airline from 'src/app/Entity/airline';
 import { AdminService } from 'src/app/services/admin.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-newairline',
@@ -8,7 +10,7 @@ import { AdminService } from 'src/app/services/admin.service';
   styleUrls: ['./newairline.component.css']
 })
 export class NewairlineComponent implements OnInit {
-
+  //isLoggedIn = false;
   airline: airline = new airline();
 
   save(){
@@ -23,9 +25,18 @@ export class NewairlineComponent implements OnInit {
       }
     );
   }
-  constructor(public adminService: AdminService) { }
+  constructor(public adminService: AdminService,
+    private router: Router,
+    private authenticationService: AuthService) { }
 
   ngOnInit(): void {
+    //this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+    //console.log('menu ->' + this.isLoggedIn);
+  }
+
+  handleLogout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 
 }

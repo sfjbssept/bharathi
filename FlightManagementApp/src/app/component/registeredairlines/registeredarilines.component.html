@@ -1,4 +1,5 @@
-<p>addinventory works!</p>
+<p>registeredarilines works!</p>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div><a href="https://www.javaguides.net" class="navbar-brand">Flight Management System</a></div>
     <ul class="navbar-nav navbar-collapse justify-content-end">
@@ -16,21 +17,27 @@
         </li>
     </ul>
 </nav>
-<form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
-      <label for="validationCustom01" class="form-label"></label>
-      <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="flight.flightNumber" class="form-control" id="validationCustom01" placeholder="Please Enter Flight Number" required>
-      <div class="valid-feedback">
-          Looks good!
-      </div>
-  </div>
- 
 
-  
-      <div style="text-align: center;" class="col-12">
-          <button (click)="save()" class="btn btn-primary" type="submit">Submit form</button>
+<h1 style="text-align: center; background-color: #f7b285" class="display-1">
+    {{title | uppercase}}
+   </h1>
+   <br />
+   
+   <ol class="list-group list-group-numbered">
+     <li
+       class="list-group-item d-flex justify-content-between align-items-start"
+       *ngFor="let s of airlines; index as i">
+       <div class="ms-2 me-auto">
+         <div class="fw-bold">{{ s.airlineName}}</div>
+       
+       </div>
+       <div class="ms-2 me-auto">
+        <div class="fw-bold">{{ s.airlineSchedule}}</div>
+      
       </div>
-  
-  
-</form>
-
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{ s.airlineStatus}} </div>
+      
+      </div>
+  </li>
+   </ol>

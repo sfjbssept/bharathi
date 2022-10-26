@@ -1,5 +1,7 @@
 package com.flight.management.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,12 @@ public class AdminServiceImpl implements AdminService{
 	public Integer addInventory(Flight flight) {
 		Flight newInventory = flightRepository.save(flight);
 		return newInventory.getFlightId();
+	}
+
+	@Override
+	public List<Airline> getAllRegisteredAirline() {
+		// TODO Auto-generated method stub
+		return airlineRepository.findAll();
 	}
 
 }

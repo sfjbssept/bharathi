@@ -10,6 +10,7 @@ import { LoginComponent } from './component/login/login.component';
 import { AddinventoryComponent } from './component/addinventory/addinventory.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { RegisteredarilinesComponent } from './component/registeredairlines/registeredarilines.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     NewairlineComponent,
     LoginComponent,
     AddinventoryComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisteredarilinesComponent
   ],
   imports: [
     BrowserModule,
