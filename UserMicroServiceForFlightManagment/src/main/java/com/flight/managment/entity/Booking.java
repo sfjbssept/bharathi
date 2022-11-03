@@ -7,6 +7,8 @@ public class Booking {
 	@Id
 	private int bookingId;
 	private int numberOfSeats;
+
+	private int pnrNumber;
 	
 
 }

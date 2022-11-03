@@ -41,7 +41,6 @@ public class AdminServiceController {
 	
 	@PostMapping("/airline/inventory/add")
 	public ResponseEntity<String> addInventory(@RequestBody Flight flight) {
-		
 		Integer newInventory = adminService.addInventory(flight);
 		System.out.println(newInventory+ "Flight added");
 		return ResponseEntity.ok(newInventory+" Flight added");
