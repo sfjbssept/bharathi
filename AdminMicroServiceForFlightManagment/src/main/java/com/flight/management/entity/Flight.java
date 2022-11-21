@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -24,7 +22,6 @@ public class Flight {
      }
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer flightId;
 	
 	private String flightNumber;

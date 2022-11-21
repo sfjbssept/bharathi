@@ -3,8 +3,6 @@ package com.flight.management.entity;
 import java.util.Objects;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -15,9 +13,8 @@ public class Airline {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer airlineId;
-	
+
 	private String airlineName;
 
 	private scheduledDays airlineSchedule;
